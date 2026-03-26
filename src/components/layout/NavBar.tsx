@@ -34,7 +34,11 @@ const BURGER_ITEMS = [
   { icon: <HelpCircle className="w-5 h-5" />, label: "Help", href: "/help" },
   { icon: <ShoppingBag className="w-5 h-5" />, label: "Bag", href: "/bag" },
   { icon: <Package className="w-5 h-5" />, label: "Orders", href: "/orders" },
-  { icon: <MapPin className="w-5 h-5" />, label: "Find a Store", href: "/find-a-store" },
+  {
+    icon: <MapPin className="w-5 h-5" />,
+    label: "Find a Store",
+    href: "/find-a-store",
+  },
 ];
 
 export default function NavBar() {
@@ -70,11 +74,11 @@ export default function NavBar() {
     bmBurgerBarsHover: { background: "#d1d5db" },
     bmMenuWrap: {
       position: "fixed" as const,
-      top: 0,
-      right: 0,
+      top: "0px",
+      right: "0px",
       height: "100vh",
       width: "320px",
-      zIndex: 1000,
+      zIndex: "1000",
     },
     bmMenu: {
       background: "#FF7334",
@@ -99,7 +103,11 @@ export default function NavBar() {
       <div className="hidden lg:flex items-center justify-between bg-[#111] text-[#A3A3A3] text-xs px-8 h-8 border-b border-white/5">
         <Link href="/">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/nike (1).png" alt="Nike" className="w-14 h-auto opacity-80 hover:opacity-100 transition-opacity" />
+          <img
+            src="/nike (1).png"
+            alt="Nike"
+            className="w-14 h-auto opacity-80 hover:opacity-100 transition-opacity"
+          />
         </Link>
         <div className="flex items-center gap-1">
           {TOP_LINKS.map((l, i) => (
@@ -210,10 +218,19 @@ export default function NavBar() {
                     href={l.href}
                     onClick={() => setMenuOpen(false)}
                     className="menu-item flex justify-between items-center py-3 border-b border-white/20 group"
-                    style={{ fontFamily: "var(--font-display)", fontSize: "1.75rem", color: "#fff", letterSpacing: "0.04em" }}
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: "1.75rem",
+                      color: "#fff",
+                      letterSpacing: "0.04em",
+                    }}
                   >
-                    <span className="group-hover:opacity-70 transition-opacity">{l.label}</span>
-                    <span className="text-white/50 group-hover:opacity-70 transition-opacity text-2xl">›</span>
+                    <span className="group-hover:opacity-70 transition-opacity">
+                      {l.label}
+                    </span>
+                    <span className="text-white/50 group-hover:opacity-70 transition-opacity text-2xl">
+                      ›
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -226,9 +243,8 @@ export default function NavBar() {
                 </div>
 
                 <p className="text-white/90 text-sm leading-relaxed">
-                  Become a{" "}
-                  <span className="font-bold">Nike Member</span> for the best
-                  products, inspiration and stories in sport.{" "}
+                  Become a <span className="font-bold">Nike Member</span> for
+                  the best products, inspiration and stories in sport.{" "}
                   <Link href="/join" className="underline opacity-70">
                     Learn more
                   </Link>
